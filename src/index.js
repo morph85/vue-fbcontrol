@@ -1,8 +1,3 @@
-// import Vue from 'vue'
-if (process.env.NODE_ENV === 'development') {
-  require('regenerator-runtime/runtime')
-}
-
 // Facebook Analytics
 (function (d, s, id) {
   /* eslint one-var: 0 */
@@ -13,6 +8,8 @@ if (process.env.NODE_ENV === 'development') {
   js.src = '//connect.facebook.net/en_US/sdk.js'
   fjs.parentNode.insertBefore(js, fjs)
 }(document, 'script', 'facebook-jssdk'))
+
+require('regenerator-runtime/runtime')
 
 let Vue
 
@@ -25,6 +22,7 @@ var FBControl = {
     }
 
     if (options && options.appId) {
+      console.log('app id is: ' + options.appId)
       this.appId = options.appId
     }
 
