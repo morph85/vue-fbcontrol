@@ -1,0 +1,25 @@
+{
+  "name": "vue-fbcontrol",
+  "version": "0.0.1",
+  "description": "A tiny vue plugin to access Facebook SDK",
+  "main": "./dist/vue-fbcontrol.js",
+  "module": "./src/FBControl.js",
+  "repository": "https://github.com/morph85/vue-fbcontrol",
+  "author": "Morph85 <ivan@noctorus.studio>",
+  "license": "MIT",
+  "dependencies": {},
+  "scripts": {
+    "build": "webpack -p"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "webpack": "^3.2.0"
+  }
+}
