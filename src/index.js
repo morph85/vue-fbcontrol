@@ -29,7 +29,8 @@ var FBControl = {
       // the following is template from FB developers
       // with compliance for ESlint
       window.fbAsyncInit = () => {
-        this.init(this.appId, this.version)
+        var FB = this.init(this.appId, this.version)
+        Object.defineProperty(Vue.prototype, '$FB', { value: FB })
       }
     } else {
       this.init(this.appId, this.version)
@@ -44,7 +45,6 @@ var FBControl = {
       version: version
     })
     window.FB = FB
-    Object.defineProperty(Vue.prototype, '$FB', { value: FB })
     return FB
   },
   getFB: async function () {
