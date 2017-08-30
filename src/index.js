@@ -1,4 +1,7 @@
 // import Vue from 'vue'
+if (process.env.NODE_ENV === 'development') {
+  require('regenerator-runtime/runtime')
+}
 
 // Facebook Analytics
 (function (d, s, id) {
