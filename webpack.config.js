@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   //entry
-  entry: './src/index.js',
+  entry: ['babel-polyfill', './src/index.js'],
   //output
   output: {
     library: 'vue-fbcontrol',
