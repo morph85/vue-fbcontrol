@@ -11,8 +11,12 @@
   fjs.parentNode.insertBefore(js, fjs)
 }(document, 'script', 'facebook-jssdk'))
 
+let Vue
+
 var FBControl = {
-  install (Vue, options) {
+  install ($Vue, options) {
+    Vue = $Vue
+
     if (options && options.awaitAsyncTime) {
       this.awaitAsyncTime = options.awaitAsyncTime
     }
