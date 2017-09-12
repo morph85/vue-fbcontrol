@@ -1,10 +1,12 @@
+import 'babel-polyfill'
+
 import Vue from 'vue'
 import App from './App'
 
 // FB
 import FBControl from '@/'
 Vue.use(FBControl, {
-  appId: ['your-fb-id-here'],
+  appId: 'your-fb-app-id-here',
   version: 'v2.7'
 })
 

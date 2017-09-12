@@ -9,8 +9,6 @@
   fjs.parentNode.insertBefore(js, fjs)
 }(document, 'script', 'facebook-jssdk'))
 
-require('regenerator-runtime/runtime')
-
 let Vue
 
 var FBControl = {
@@ -22,7 +20,7 @@ var FBControl = {
     }
 
     if (options && options.appId) {
-      console.log('app id is: ' + options.appId)
+      console.log('initialized app id with: ' + options.appId)
       this.appId = options.appId
     }
 
@@ -88,6 +86,7 @@ var FBControl = {
       }
       await this.getFB()
       .then((FB) => {
+        // console.log('logging event logged later with obtained FB')
         FB.AppEvents.logEvent(name)
       })
       .catch((error) => {
@@ -97,8 +96,10 @@ var FBControl = {
   },
   logPageView: async function () {
     if (Vue.$FB !== undefined) {
+      // console.log('logging page view logged now with Vue.$FB')
       Vue.$FB.AppEvents.logPageView()
     } else if (window.FB !== undefined) {
+      // console.log('logging page view logged now with window.FB')
       window.FB.AppEvents.logPageView()
     } else {
       if (!this.awaitAsyncTime) {
@@ -107,6 +108,7 @@ var FBControl = {
       }
       await this.getFB()
       .then((FB) => {
+        // console.log('logging page view logged later with obtained FB')
         FB.AppEvents.logPageView()
       })
       .catch((error) => {
