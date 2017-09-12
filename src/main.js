@@ -6,7 +6,7 @@ import App from './App'
 // FB
 import FBControl from '@/'
 Vue.use(FBControl, {
-  appId: '782732588553167',
+  appId: 'your-fb-app-id-here',
   version: 'v2.7'
 })
 
